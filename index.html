@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Israel Gonzalez | Game Programmer</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Deep slate background colors
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        // Vibrant Violet accent
+                        accent: '#a78bfa', 
+                        accentHover: '#8b5cf6'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            /* Forzamos el color oscuro con Hex para evitar fondos blancos por error de carga */
+            background-color: #0f172a !important; 
+            color: #f3f4f6 !important;
+        }
+        
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a78bfa;
+        }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-gray-100 antialiased selection:bg-accent selection:text-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-white font-bold text-xl tracking-wider">ISRAEL <span class="text-accent">GONZÁLEZ</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-accent transition-colors">About</a>
+                <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+                <a href="#featured" class="hover:text-accent transition-colors">Featured Projects</a>
+                <a href="#more-projects" class="hover:text-accent transition-colors">More Work</a>
+            </div>
+            <!-- Mobile Menu Icon (Visual only for simplicity in single file) -->
+            <div class="md:hidden text-white text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <p class="text-accent font-medium tracking-wide">Hi, my name is</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-2">
+                    Israel González.
+                </h1>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-400 mb-6">
+                    I build games and engines.
+                </h2>
+                <p class="text-lg md:text-xl max-w-2xl text-gray-200 leading-relaxed">
+                    Game Programming student at SAE Institute, passionate about gameplay mechanics, engine architecture, and graphics. Actively seeking opportunities for work and social service to apply and expand my technical skills.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="https://github.com/IsraPoke?tab=repositories" target="_blank" class="flex items-center gap-2 border border-accent text-accent px-6 py-3 rounded md hover:bg-accent hover:text-dark transition-all duration-300 font-medium">
+                        <i class="fa-brands fa-github text-lg"></i> GitHub
+                    </a>
+                    <a href="https://israpoke.itch.io/" target="_blank" class="flex items-center gap-2 border border-gray-600 text-gray-300 px-6 py-3 rounded md hover:border-accent hover:text-accent transition-all duration-300 font-medium">
+                        <i class="fa-brands fa-itch-io text-lg"></i> Itch.io
+                    </a>
+                    <a href="mailto:israel.gonzalez@saei.mx" class="flex items-center gap-2 border border-gray-600 text-gray-300 px-6 py-3 rounded md hover:border-accent hover:text-accent transition-all duration-300 font-medium">
+                        <i class="fa-solid fa-envelope text-lg"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="text-accent">01.</span> Technical Skills
+                    <div class="h-px bg-gray-700 flex-1 ml-4"></div>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Languages -->
+                    <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
+                        <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Languages</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C++</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Advanced</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C#</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Advanced</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Proficient</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Engines -->
+                    <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
+                        <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-gamepad"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Game Engines</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Unity</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Godot</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Pico-8</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Frameworks / APIs -->
+                    <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
+                        <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-cubes"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4">Frameworks & APIs</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center"><span class="text-gray-300">Raylib</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Intermediate</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">OpenGL</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Intermediate</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="featured" class="py-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="text-accent">02.</span> Featured Projects
+                    <div class="h-px bg-gray-700 flex-1 ml-4"></div>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Crypt Defense -->
+                    <div class="bg-card rounded-xl overflow-hidden border border-gray-800 hover:-translate-y-2 hover:border-accent transition-all duration-300 group flex flex-col">
+                        <!-- Placeholder Image (Replace src with your actual screenshot) -->
+                        <div class="relative h-48 overflow-hidden bg-slate-800">
+                            <img src="ezgif-25b7734a2d277627.jpg" alt="Crypt Defense" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-accent text-sm font-semibold mb-1">Thesis Project</p>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Crypt Defense</h3>
+                                </div>
+                                <a href="https://github.com/IsraPoke/TheLastDefenseElBueno" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-1">
+                                A comprehensive thesis project focusing on engaging defense mechanics, strategic gameplay loops, and solid technical implementation.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="text-xs font-mono text-gray-500">C#</span>
+                                <span class="text-xs font-mono text-gray-500">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Excriblesim -->
+                    <div class="bg-card rounded-xl overflow-hidden border border-gray-800 hover:-translate-y-2 hover:border-accent transition-all duration-300 group flex flex-col">
+                        <!-- Placeholder Image -->
+                        <div class="relative h-48 overflow-hidden bg-slate-800">
+                            <img src="Proyecto Recortar vídeo - 04 de noviembre de 2026 a las 21.26.53.jpg" alt="Excriblecism" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-accent text-sm font-semibold mb-1">Simulation</p>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Excriblesim</h3>
+                                </div>
+                                <a href="https://github.com/JaimeAyoub/Exorcist" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-1">
+                                An interactive simulation/game project with a focus on unique mechanics and atmospheric elements.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="text-xs font-mono text-gray-500">Programming</span>
+                                <span class="text-xs font-mono text-gray-500">Mechanics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Raylib Custom Engine -->
+                    <div class="bg-card rounded-xl overflow-hidden border border-gray-800 hover:-translate-y-2 hover:border-accent transition-all duration-300 group flex flex-col">
+                        <!-- Placeholder Image -->
+                        <div class="relative h-48 overflow-hidden bg-slate-800">
+                            <img src="raylib-engine.png" alt="Raylib Engine" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <p class="text-accent text-sm font-semibold mb-1">Architecture</p>
+                                    <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Raylib Engine</h3>
+                                </div>
+                                <a href="https://github.com/IsraelGonzEsc/RaylibIsra" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6 flex-1">
+                                A custom game engine architecture built from scratch utilizing the Raylib framework. Focuses on performance, memory management, and rendering pipelines.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-auto">
+                                <span class="text-xs font-mono text-gray-500">C++</span>
+                                <span class="text-xs font-mono text-gray-500">Raylib</span>
+                                <span class="text-xs font-mono text-gray-500">Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- More Projects Section (Secondary Grid) -->
+        <section id="more-projects" class="py-24 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="text-accent">03.</span> More Work & Game Jams
+                    <div class="h-px bg-gray-700 flex-1 ml-4"></div>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Bubble Boy -->
+                    <a href="https://github.com/JaimeAyoub/Ni-oBurbuja" target="_blank" class="block bg-card p-6 rounded-lg border border-gray-800 hover:-translate-y-1 hover:border-accent transition-all group">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-regular fa-folder text-3xl text-accent"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Bubble Boy</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Developed under pressure during one of my two Game Jam participations. Focuses on quick iteration and functional gameplay loops.
+                        </p>
+                        <div class="flex gap-3 text-xs font-mono text-gray-500">
+                            <span>Game Jam</span>
+                            <span>Prototyping</span>
+                        </div>
+                    </a>
+
+                    <!-- VR Game Project -->
+                    <a href="https://github.com/LIVEMILIO2/VrJuego" target="_blank" class="block bg-card p-6 rounded-lg border border-gray-800 hover:-translate-y-1 hover:border-accent transition-all group">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-vr-cardboard text-3xl text-accent"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">VR Game Project</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Virtual Reality game development project exploring immersive interactions, spatial computing, and VR-specific mechanics.
+                        </p>
+                        <div class="flex gap-3 text-xs font-mono text-gray-500">
+                            <span>VR</span>
+                            <span>3D Math</span>
+                        </div>
+                    </a>
+
+                    <!-- Advanced Computer Graphics -->
+                    <a href="https://github.com/IsraelGonzEsc/OpenGLCGAvanzado" target="_blank" class="block bg-card p-6 rounded-lg border border-gray-800 hover:-translate-y-1 hover:border-accent transition-all group">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-draw-polygon text-3xl text-accent"></i>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Adv. Computer Graphics</h3>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Explorations in advanced computer graphics concepts using OpenGL. Includes rendering techniques, shaders, and pipeline management.
+                        </p>
+                        <div class="flex gap-3 text-xs font-mono text-gray-500">
+                            <span>C++</span>
+                            <span>OpenGL</span>
+                            <span>Shaders</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-8 text-center border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <div class="flex space-x-6 mb-4">
+                <a href="https://github.com/IsraPoke?tab=repositories" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://israpoke.itch.io/" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors">
+                    <i class="fa-brands fa-itch-io"></i>
+                </a>
+                <a href="mailto:israel.gonzalez@saei.mx" class="text-gray-400 hover:text-accent text-xl transition-colors">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm font-mono">
+                Designed & Built by Israel Gonzalez <br>
+                &copy; <span id="year"></span> All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Simple Script for dynamic year -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
