@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Israel Gonzalez | Game Programmer</title>
+    <title>Israel Gonzalez | Game Programmer & Pixel Artist</title>
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,10 +25,8 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // Deep slate background colors
                         dark: '#0f172a',
                         card: '#1e293b',
-                        // Vibrant Violet accent
                         accent: '#a78bfa', 
                         accentHover: '#8b5cf6'
                     }
@@ -39,12 +37,10 @@
 
     <style>
         body {
-            /* Forzamos el color oscuro con Hex para evitar fondos blancos por error de carga */
             background-color: #0f172a !important; 
             color: #f3f4f6 !important;
         }
         
-        /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -64,6 +60,12 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
+
+        .pixelated {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
     </style>
 </head>
 <body class="bg-[#0f172a] text-gray-100 antialiased selection:bg-accent selection:text-dark">
@@ -72,15 +74,23 @@
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-white font-bold text-xl tracking-wider">ISRAEL <span class="text-accent">GONZÁLEZ</span></a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-accent transition-colors">About</a>
-                <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
-                <a href="#featured" class="hover:text-accent transition-colors">Featured Projects</a>
-                <a href="#more-projects" class="hover:text-accent transition-colors">More Work</a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+                <a href="#skills" class="hover:text-accent transition-colors"><span data-en="Skills" data-es="Habilidades">Skills</span></a>
+                <a href="#featured" class="hover:text-accent transition-colors"><span data-en="Projects" data-es="Proyectos">Projects</span></a>
+                <a href="#pixelart" class="hover:text-accent transition-colors"><span data-en="Pixel Art" data-es="Pixel Art">Pixel Art</span></a>
+                
+                <!-- Language Toggle Button -->
+                <button onclick="toggleLanguage()" class="ml-4 px-3 py-1 bg-gray-800 border border-gray-600 rounded hover:border-accent hover:text-accent transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-language text-lg"></i>
+                    <span id="lang-indicator" class="font-bold">EN</span>
+                </button>
             </div>
-            <!-- Mobile Menu Icon (Visual only for simplicity in single file) -->
-            <div class="md:hidden text-white text-xl">
-                <i class="fa-solid fa-bars"></i>
+            <!-- Mobile Menu Icon & Mobile Lang Toggle -->
+            <div class="md:hidden flex items-center gap-4 text-white">
+                <button onclick="toggleLanguage()" class="text-sm font-bold border border-gray-600 px-2 rounded hover:text-accent">
+                    <span id="lang-indicator-mobile">EN</span>
+                </button>
+                <i class="fa-solid fa-bars text-xl"></i>
             </div>
         </div>
     </nav>
@@ -89,15 +99,15 @@
     <header id="home" class="min-h-screen flex items-center pt-20">
         <div class="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 space-y-6">
-                <p class="text-accent font-medium tracking-wide">Hi, my name is</p>
+                <p class="text-accent font-medium tracking-wide" data-en="Hi, my name is" data-es="Hola, me llamo">Hi, my name is</p>
                 <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-2">
                     Israel González.
                 </h1>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-400 mb-6">
-                    I build games and engines.
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6">
+                    <span data-en="Gameplay Programmer & Pixel Artist." data-es="Programador de Videojuegos y Pixel Artist.">Gameplay Programmer & Pixel Artist.</span>
                 </h2>
-                <p class="text-lg md:text-xl max-w-2xl text-gray-200 leading-relaxed">
-                    Game Programming student at SAE Institute, passionate about gameplay mechanics, engine architecture, and graphics. Actively seeking opportunities for work and social service to apply and expand my technical skills.
+                <p class="text-lg md:text-xl max-w-2xl text-gray-300 leading-relaxed" data-en="Game Programming student at SAE Institute, passionate about gameplay mechanics, engine architecture, and retro graphics. Actively seeking opportunities for work and social service to apply and expand my technical skills." data-es="Estudiante de Programación de Videojuegos en SAE Institute, apasionado por las mecánicas de juego, la arquitectura de motores y los gráficos retro. Buscando activamente oportunidades de trabajo y servicio social para aplicar y expandir mis habilidades técnicas.">
+                    Game Programming student at SAE Institute, passionate about gameplay mechanics, engine architecture, and retro graphics. Actively seeking opportunities for work and social service to apply and expand my technical skills.
                 </p>
                 
                 <div class="flex flex-wrap gap-4 pt-4">
@@ -108,7 +118,7 @@
                         <i class="fa-brands fa-itch-io text-lg"></i> Itch.io
                     </a>
                     <a href="mailto:israel.gonzalez@saei.mx" class="flex items-center gap-2 border border-gray-600 text-gray-300 px-6 py-3 rounded md hover:border-accent hover:text-accent transition-all duration-300 font-medium">
-                        <i class="fa-solid fa-envelope text-lg"></i> Contact Me
+                        <i class="fa-solid fa-envelope text-lg"></i> <span data-en="Contact Me" data-es="Contáctame">Contact Me</span>
                     </a>
                 </div>
             </div>
@@ -120,41 +130,51 @@
         <section id="skills" class="py-24 bg-slate-900/50">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
-                    <span class="text-accent">01.</span> Technical Skills
+                    <span class="text-accent">01.</span> <span data-en="Technical Skills" data-es="Habilidades Técnicas">Technical Skills</span>
                     <div class="h-px bg-gray-700 flex-1 ml-4"></div>
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Languages -->
                     <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
                         <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-code"></i></div>
-                        <h3 class="text-xl font-bold text-white mb-4">Languages</h3>
+                        <h3 class="text-xl font-bold text-white mb-4" data-en="Languages" data-es="Lenguajes">Languages</h3>
                         <ul class="space-y-3">
-                            <li class="flex justify-between items-center"><span class="text-gray-300">C++</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Advanced</span></li>
-                            <li class="flex justify-between items-center"><span class="text-gray-300">C#</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Advanced</span></li>
-                            <li class="flex justify-between items-center"><span class="text-gray-300">C</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">Proficient</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C++</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent" data-en="Advanced" data-es="Avanzado">Advanced</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C#</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent" data-en="Advanced" data-es="Avanzado">Advanced</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">C</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400" data-en="Intermediate" data-es="Intermedio">Intermediate</span></li>
                         </ul>
                     </div>
                     
                     <!-- Engines -->
                     <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
                         <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-gamepad"></i></div>
-                        <h3 class="text-xl font-bold text-white mb-4">Game Engines</h3>
+                        <h3 class="text-xl font-bold text-white mb-4" data-en="Engines" data-es="Motores">Engines</h3>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Unity</span>
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Unreal Engine</span>
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Godot</span>
-                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700">Pico-8</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700 text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700 text-sm">Unreal Engine</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700 text-sm">Godot</span>
+                            <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded border border-gray-700 text-sm">Pico-8</span>
                         </div>
                     </div>
                     
                     <!-- Frameworks / APIs -->
                     <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
                         <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-cubes"></i></div>
-                        <h3 class="text-xl font-bold text-white mb-4">Frameworks & APIs</h3>
+                        <h3 class="text-xl font-bold text-white mb-4" data-en="Frameworks" data-es="Entornos">Frameworks</h3>
                         <ul class="space-y-3">
-                            <li class="flex justify-between items-center"><span class="text-gray-300">Raylib</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Intermediate</span></li>
-                            <li class="flex justify-between items-center"><span class="text-gray-300">OpenGL</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent">Intermediate</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">Raylib</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent" data-en="Intermediate" data-es="Intermedio">Intermediate</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">OpenGL</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent" data-en="Intermediate" data-es="Intermedio">Intermediate</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Art & Design -->
+                    <div class="bg-card p-6 rounded-lg border border-gray-800 hover:border-accent/50 transition-colors">
+                        <div class="text-accent text-3xl mb-4"><i class="fa-solid fa-palette"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-4" data-en="Art & Design" data-es="Arte y Diseño">Art & Design</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center"><span class="text-gray-300">Pixel Art</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-accent" data-en="Proficient" data-es="Competente">Proficient</span></li>
+                            <li class="flex justify-between items-center"><span class="text-gray-300">2D Animation</span> <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400" data-en="Intermediate" data-es="Intermedio">Intermediate</span></li>
                         </ul>
                     </div>
                 </div>
@@ -165,7 +185,7 @@
         <section id="featured" class="py-24">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
-                    <span class="text-accent">02.</span> Featured Projects
+                    <span class="text-accent">02.</span> <span data-en="Featured Projects" data-es="Proyectos Destacados">Featured Projects</span>
                     <div class="h-px bg-gray-700 flex-1 ml-4"></div>
                 </h2>
 
@@ -173,19 +193,18 @@
                     
                     <!-- Card 1: Crypt Defense -->
                     <div class="bg-card rounded-xl overflow-hidden border border-gray-800 hover:-translate-y-2 hover:border-accent transition-all duration-300 group flex flex-col">
-                        <!-- Project GIF -->
-                        <div class="relative h-48 overflow-hidden bg-slate-800">
-                            <img src="crypt-defense.gif" alt="Crypt Defense" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        <div class="relative h-56 overflow-hidden bg-slate-800">
+                            <img src="crypt-defense.gif" alt="Crypt Defense" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 pixelated">
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <p class="text-accent text-sm font-semibold mb-1">Thesis Project</p>
+                                    <p class="text-accent text-sm font-semibold mb-1" data-en="Thesis Project" data-es="Proyecto de Tesis">Thesis Project</p>
                                     <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Crypt Defense</h3>
                                 </div>
                                 <a href="https://github.com/IsraPoke/TheLastDefenseElBueno" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors"><i class="fa-brands fa-github"></i></a>
                             </div>
-                            <p class="text-gray-400 text-sm mb-6 flex-1">
+                            <p class="text-gray-400 text-sm mb-6 flex-1" data-en="A comprehensive thesis project focusing on engaging defense mechanics, strategic gameplay loops, and solid technical implementation." data-es="Un proyecto de tesis integral centrado en mecánicas de defensa atractivas, bucles de juego estratégicos y una sólida implementación técnica.">
                                 A comprehensive thesis project focusing on engaging defense mechanics, strategic gameplay loops, and solid technical implementation.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
@@ -197,24 +216,23 @@
 
                     <!-- Card 2: Excriblesim -->
                     <div class="bg-card rounded-xl overflow-hidden border border-gray-800 hover:-translate-y-2 hover:border-accent transition-all duration-300 group flex flex-col">
-                        <!-- Project GIF -->
-                        <div class="relative h-48 overflow-hidden bg-slate-800">
-                            <img src="excriblesim.gif" alt="Excriblesim" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                        <div class="relative h-56 overflow-hidden bg-slate-800">
+                            <img src="excriblesim.gif" alt="Excriblesim" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 pixelated">
                         </div>
                         <div class="p-6 flex-1 flex flex-col">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <p class="text-accent text-sm font-semibold mb-1">Simulation</p>
+                                    <p class="text-accent text-sm font-semibold mb-1" data-en="Simulation Game" data-es="Juego de Simulación">Simulation Game</p>
                                     <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">Excriblesim</h3>
                                 </div>
                                 <a href="https://github.com/JaimeAyoub/Exorcist" target="_blank" class="text-gray-400 hover:text-accent text-xl transition-colors"><i class="fa-brands fa-github"></i></a>
                             </div>
-                            <p class="text-gray-400 text-sm mb-6 flex-1">
+                            <p class="text-gray-400 text-sm mb-6 flex-1" data-en="An interactive simulation/game project with a focus on unique mechanics and atmospheric elements." data-es="Un proyecto interactivo de simulación/juego con un enfoque en mecánicas únicas y elementos atmosféricos.">
                                 An interactive simulation/game project with a focus on unique mechanics and atmospheric elements.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-mono text-gray-500">Programming</span>
-                                <span class="text-xs font-mono text-gray-500">Mechanics</span>
+                                <span class="text-xs font-mono text-gray-500" data-en="Programming" data-es="Programación">Programming</span>
+                                <span class="text-xs font-mono text-gray-500" data-en="Mechanics" data-es="Mecánicas">Mechanics</span>
                             </div>
                         </div>
                     </div>
@@ -223,16 +241,54 @@
             </div>
         </section>
 
-        <!-- More Projects Section (Secondary Grid) -->
-        <section id="more-projects" class="py-24 bg-slate-900/50">
+        <!-- Pixel Art Gallery Section (NEW) -->
+        <section id="pixelart" class="py-24 bg-slate-900/50">
             <div class="max-w-6xl mx-auto px-6">
                 <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
-                    <span class="text-accent">03.</span> More Work & Game Jams
+                    <span class="text-accent">03.</span> <span data-en="Pixel Art Gallery" data-es="Galería de Pixel Art">Pixel Art Gallery</span>
+                    <div class="h-px bg-gray-700 flex-1 ml-4"></div>
+                </h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    
+                    <!-- Sprite 1 -->
+                    <div class="bg-card rounded-lg p-4 border border-gray-800 hover:border-accent transition-all duration-300 group">
+                        <div class="w-full aspect-square flex items-center justify-center bg-dark rounded overflow-hidden">
+                            <!-- Added pixelated class to keep scaling crisp -->
+                            <img src="SpriteCalacaKnight2.gif" alt="Calaca Knight Sprite" class="w-3/4 h-3/4 object-contain pixelated group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h4 class="text-center text-gray-300 font-semibold mt-4">Calaca Knight</h4>
+                    </div>
+
+                    <!-- Sprite 2 -->
+                    <div class="bg-card rounded-lg p-4 border border-gray-800 hover:border-accent transition-all duration-300 group">
+                        <div class="w-full aspect-square flex items-center justify-center bg-dark rounded overflow-hidden">
+                            <img src="ScoutENEMY.gif" alt="Scout Enemy Sprite" class="w-3/4 h-3/4 object-contain pixelated group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h4 class="text-center text-gray-300 font-semibold mt-4">Scout Enemy</h4>
+                    </div>
+
+                    <!-- Sprite 3 -->
+                    <div class="bg-card rounded-lg p-4 border border-gray-800 hover:border-accent transition-all duration-300 group">
+                        <div class="w-full aspect-square flex items-center justify-center bg-dark rounded overflow-hidden">
+                            <img src="BocaGula.png" alt="Boca Gula Sprite" class="w-3/4 h-3/4 object-contain pixelated group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <h4 class="text-center text-gray-300 font-semibold mt-4">Boca Gula</h4>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- More Projects Section -->
+        <section id="more-projects" class="py-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+                    <span class="text-accent">04.</span> <span data-en="More Work & Jams" data-es="Más Trabajos y Game Jams">More Work & Jams</span>
                     <div class="h-px bg-gray-700 flex-1 ml-4"></div>
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
                     <!-- Bubble Boy -->
                     <a href="https://github.com/JaimeAyoub/Ni-oBurbuja" target="_blank" class="block bg-card p-6 rounded-lg border border-gray-800 hover:-translate-y-1 hover:border-accent transition-all group">
                         <div class="flex justify-between items-center mb-4">
@@ -240,12 +296,12 @@
                             <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Bubble Boy</h3>
-                        <p class="text-gray-400 text-sm mb-4">
-                            Developed under pressure during one of my two Game Jam participations. Focuses on quick iteration and functional gameplay loops.
+                        <p class="text-gray-400 text-sm mb-4" data-en="Developed under pressure during one of my Game Jam participations. Focuses on quick iteration and functional gameplay loops." data-es="Desarrollado bajo presión durante una de mis participaciones en Game Jams. Se centra en la iteración rápida y bucles de juego funcionales.">
+                            Developed under pressure during one of my Game Jam participations. Focuses on quick iteration and functional gameplay loops.
                         </p>
                         <div class="flex gap-3 text-xs font-mono text-gray-500">
                             <span>Game Jam</span>
-                            <span>Prototyping</span>
+                            <span data-en="Prototyping" data-es="Prototipado">Prototyping</span>
                         </div>
                     </a>
 
@@ -255,13 +311,13 @@
                             <i class="fa-solid fa-vr-cardboard text-3xl text-accent"></i>
                             <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">VR Game Project</h3>
-                        <p class="text-gray-400 text-sm mb-4">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors" data-en="VR Game Project" data-es="Proyecto en Realidad Virtual">VR Game Project</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-en="Virtual Reality game development project exploring immersive interactions, spatial computing, and VR-specific mechanics." data-es="Proyecto de desarrollo de juegos de Realidad Virtual explorando interacciones inmersivas, computación espacial y mecánicas específicas de VR.">
                             Virtual Reality game development project exploring immersive interactions, spatial computing, and VR-specific mechanics.
                         </p>
                         <div class="flex gap-3 text-xs font-mono text-gray-500">
                             <span>VR</span>
-                            <span>3D Math</span>
+                            <span data-en="3D Math" data-es="Matemáticas 3D">3D Math</span>
                         </div>
                     </a>
 
@@ -271,8 +327,8 @@
                             <i class="fa-solid fa-draw-polygon text-3xl text-accent"></i>
                             <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 group-hover:text-accent transition-colors"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Adv. Computer Graphics</h3>
-                        <p class="text-gray-400 text-sm mb-4">
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors" data-en="Adv. Computer Graphics" data-es="Cómputo Gráfico Avanzado">Adv. Computer Graphics</h3>
+                        <p class="text-gray-400 text-sm mb-4" data-en="Explorations in advanced computer graphics concepts using OpenGL. Includes rendering techniques, shaders, and pipeline management." data-es="Exploración de conceptos avanzados de gráficos por computadora usando OpenGL. Incluye técnicas de renderizado y manejo de shaders.">
                             Explorations in advanced computer graphics concepts using OpenGL. Includes rendering techniques, shaders, and pipeline management.
                         </p>
                         <div class="flex gap-3 text-xs font-mono text-gray-500">
@@ -281,7 +337,6 @@
                             <span>Shaders</span>
                         </div>
                     </a>
-
                 </div>
             </div>
         </section>
@@ -302,15 +357,33 @@
                 </a>
             </div>
             <p class="text-gray-500 text-sm font-mono">
-                Designed & Built by Israel Gonzalez <br>
-                &copy; <span id="year"></span> All rights reserved.
+                <span data-en="Designed & Built by" data-es="Diseñado y Creado por">Designed & Built by</span> Israel Gonzalez <br>
+                &copy; <span id="year"></span> <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span>
             </p>
         </div>
     </footer>
 
-    <!-- Simple Script for dynamic year -->
+    <!-- Scripts -->
     <script>
+        // Set dynamic year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Language Toggle Logic
+        let currentLang = 'en';
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            
+            // Update button visual indicator
+            const indicatorText = currentLang === 'en' ? 'EN' : 'ES';
+            document.getElementById('lang-indicator').textContent = indicatorText;
+            document.getElementById('lang-indicator-mobile').textContent = indicatorText;
+
+            // Find all elements with translation data attributes and update their text
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+        }
     </script>
 </body>
 </html>
